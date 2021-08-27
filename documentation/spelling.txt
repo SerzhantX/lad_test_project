@@ -1,0 +1,11 @@
+{baseUrl}/spelling - исправление опечаток
+
+Request {
+  Headers {
+    Content-Type: application/x-www-form-urlencoded || application/json
+  }
+
+  Body {
+    text {string}
+  }
+}
