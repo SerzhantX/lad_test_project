@@ -1,0 +1,29 @@
+{baseUrl}/register - регистрация
+
+POST
+
+Request {
+  Headers {
+    Content-Type: application/x-www-form-urlencoded || application/json
+  }
+
+  Body {
+    login {string} - логин
+    password {string} - пароль
+  }
+}
+
+Response {
+  {JSON}: {
+    status {string}
+    data {string | null}
+  }
+}
+
+возможные статусы: {
+  success - успешная регистрация
+  invalidLogin - некорректный логин
+  invalidPassword - некорректный пароль
+  existLogin - занятый логин
+  notSuccess - ошибка сервера
+}

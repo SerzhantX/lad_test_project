@@ -4,11 +4,6 @@ import { Spelling } from '../resolver/checkSpellingText'
 
 export class spellingRouter {
 
-  static validateReq(req: Request): boolean {
-    const text = req.body.text;
-    return text !== undefined && typeof text === 'string';
-  }
-
   public static async handler (req: Request, res: Response): Promise<any> {
 
     if (!spellingRouter.validateReq(req)) {
@@ -31,5 +26,14 @@ export class spellingRouter {
     }
 
     res.json(responses.success(data));
+  }
+
+  private static validateReq(req: Request): boolean {
+    const text = req.body.text;
+    return spellingRouter.validateText(text);
+  }
+
+  private static validateText(text: any): boolean {
+    return text !== undefined && typeof text === 'string';
   }
 }

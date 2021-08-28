@@ -1,11 +1,26 @@
 {baseUrl}/spelling - исправление опечаток
 
+POST
+
 Request {
   Headers {
     Content-Type: application/x-www-form-urlencoded || application/json
   }
 
   Body {
-    text {string}
+    text {string} - входной текст
   }
+}
+
+Response {
+  {JSON}: {
+    status {string}
+    data {string | null}
+  }
+}
+
+возможные статусы: {
+  success - текст успешно обработан + data {string} - выходной текст
+  notExistText - нет входного текста
+  notSuccess - ошибка сервера
 }

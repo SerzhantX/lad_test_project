@@ -3,6 +3,8 @@ version: "3.8"
 services:
 
   lad-test-project-backend:
+    depends_on:
+      - lad-test-project-mongo
     image: ${BACKEND_NAME}
     container_name: ${BACKEND_NAME}
     restart: unless-stopped
@@ -10,3 +12,24 @@ services:
       - .env
     ports:
       - ${BACKEND_HOST}:${BACKEND_PORT}:${EXPRESS_PORT}
+    networks:
+      - lad-test-project
+
+
+  lad-test-project-mongo:
+    image: mongo
+    container_name: ${MONGO_NAME}
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - ${MONGO_HOST}:${MONGO_PORT}:27017
+    volumes:
+      - ${MONGO_DIRECTORY}:/data/db
+    networks:
+      - lad-test-project
+
+
+networks:
+  lad-test-project:
+    driver: bridge

@@ -1,0 +1,6 @@
+{
+  "passwordOptions": {
+    "min": 6,
+    "max": 25
+  }
+}

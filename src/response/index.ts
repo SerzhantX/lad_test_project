@@ -21,6 +21,18 @@ const responses = {
 
   notExistText: (data: any = null): IResponse => {
     return makeResponse('notExistText', data);
+  },
+
+  invalidLogin: (data: any = null): IResponse => {
+    return makeResponse('invalidLogin', data);
+  },
+
+  invalidPassword: (data: any = null): IResponse => {
+    return makeResponse('invalidPassword', data);
+  },
+
+  existLogin: (data: any = null): IResponse => {
+    return makeResponse('existLogin', data);
   }
 }
 
