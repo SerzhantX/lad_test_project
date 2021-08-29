@@ -33,6 +33,14 @@ const responses = {
 
   existLogin: (data: any = null): IResponse => {
     return makeResponse('existLogin', data);
+  },
+
+  notExistUser: (data: any = null): IResponse => {
+    return makeResponse('notExistUser', data);
+  },
+
+  notAuth: (data: any = null): IResponse => {
+    return makeResponse('notAuth', data);
   }
 }
 

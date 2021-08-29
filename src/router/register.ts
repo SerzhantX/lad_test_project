@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { responses } from '../response';
-import { User } from '../mongoModels'
+import { User } from '../mongoModels';
 import { passwordOptions } from "../setting/setting.json";
 
 export class registerRouter {

@@ -1,4 +1,4 @@
-{baseUrl}/register - регистрация
+{baseUrl}/login - вход
 
 POST
 
@@ -16,14 +16,14 @@ Request {
 Response {
   {JSON} {
     status {string}
-    data {null}
+    data {object | null}
   }
 }
 
 возможные статусы: {
-  success - успешная регистрация
+  success - успешный вход + data {jwtToken {string} - токен}
   invalidLogin - некорректный логин
   invalidPassword - некорректный пароль
-  existLogin - занятый логин
+  notExistUser - нет пользователя с данным логином и/или паролем
   notSuccess - ошибка сервера
 }

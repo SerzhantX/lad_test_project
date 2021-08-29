@@ -5,6 +5,7 @@ POST
 Request {
   Headers {
     Content-Type: application/x-www-form-urlencoded || application/json
+    Authorization: Bearer <jwtToken>
   }
 
   Body {
@@ -13,7 +14,7 @@ Request {
 }
 
 Response {
-  {JSON}: {
+  {JSON} {
     status {string}
     data {string | null}
   }
@@ -22,5 +23,6 @@ Response {
 возможные статусы: {
   success - текст успешно обработан + data {string} - выходной текст
   notExistText - нет входного текста
+  notAuth - ошибка авторизации
   notSuccess - ошибка сервера
 }

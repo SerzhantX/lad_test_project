@@ -1,4 +1,5 @@
 import './config/environment';
+import './passport';
 import { server } from './config/server';
 import { MongoConnect } from './config/mongo'
 

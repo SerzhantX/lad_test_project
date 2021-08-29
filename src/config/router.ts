@@ -3,11 +3,16 @@ import * as routes from '../router';
 
 const router: Router = Router();
 
+router.post('/login',
+  routes.loginRouter.handler
+);
+
 router.post('/register',
   routes.registerRouter.handler
 );
 
 router.post('/spelling',
+  routes.authRouter.handler,
   routes.spellingRouter.handler
 );
 
